@@ -1,14 +1,48 @@
 #main {
-    section {
-        margin-bottom: 50px;
-        h1 {
-            font-size: 140%;
+    display: flex;
+    width: 640px;
+    @media (width < 640px) {
+        display: block;
+        width: auto;
+    }
+}
+.example {
+    color: red;
+    a {
+        font-weight: bold;
+    }
+    & {
+        font-weight: normal;
+    }
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+ul.pageNav {
+    li {
+        margin: 0;
+        width: 50%;
+        &.prev {
+            display: flex;
         }
-        p, ul {
-            margin-bottom: 1.5em;
+        &.next {
+            display: flex;
+            flex-direction: column-reverse;
         }
-        p.notes {
-            color: red;
+    }
+}
+
+.block {
+    width: 500px;
+    & &__element {
+        margin-bottom: 2em;
+        &--modifier {
+            background-color: #f00;
         }
     }
 }
