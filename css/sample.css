@@ -1,14 +1,51 @@
-#main section {
-  margin-bottom: 50px;
+#main {
+  display: flex;
+  width: 640px;
 }
-#main section h1 {
-  font-size: 140%;
+@media (width < 640px) {
+  #main {
+    display: block;
+    width: auto;
+  }
 }
-#main section p, #main section ul {
-  margin-bottom: 1.5em;
-}
-#main section p.notes {
+
+.example {
   color: red;
+}
+.example a {
+  font-weight: bold;
+}
+.example {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+ul.pageNav li {
+  margin: 0;
+  width: 50%;
+}
+ul.pageNav li.prev {
+  display: flex;
+}
+ul.pageNav li.next {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.block {
+  width: 500px;
+}
+.block .block__element {
+  margin-bottom: 2em;
+}
+.block .block__element--modifier {
+  background-color: #f00;
 }
 
 /*# sourceMappingURL=sample.css.map */
