@@ -4,7 +4,8 @@
   "description": "このプロジェクトは、書籍「Web制作者のためのSassの教科書」の内容を学習したものです",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass ./sass:./css",
+    "watch:sass": "sass ./sass:./css --watch"
   },
   "repository": {
     "type": "git",
