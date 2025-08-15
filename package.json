@@ -1,0 +1,19 @@
+{
+  "name": "sass-textbook",
+  "version": "1.0.0",
+  "description": "このプロジェクトは、書籍「Web制作者のためのSassの教科書」の内容を学習したものです",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com-main:miyu-code07/sass-textbook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.90.0"
+  }
+}

@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# OSファイル
+.DS_Store
+
+# エディタ設定
+.vscode/
+.idea/
+
+# ログ・一時ファイル
+*.log
+*.tmp
+
+# Sass・ビルドツールのキャッシュ
+.sass-cache/
+.cache/
+.parcel-cache/
+
+# ソースマップ（必要なければ）
+*.map
+
+# ↓ dist はGitHub Pagesで公開するので除外しない
+# dist/
+
+
