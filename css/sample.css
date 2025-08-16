@@ -48,4 +48,18 @@ ul.pageNav li.next {
   background-color: #f00;
 }
 
+.sample {
+  border-top: 5px solid #ccc;
+  border-bottom-width: 3px;
+  border-bottom-style: dotted;
+  border-bottom-color: black;
+}
+
+.item {
+  margin: 0;
+  margin-left: 10px;
+  border: 1px solid #999;
+  border-bottom: 0;
+}
+
 /*# sourceMappingURL=sample.css.map */
