@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #main {
   display: flex;
   width: 640px;
@@ -60,6 +61,45 @@ ul.pageNav li.next {
   margin-left: 10px;
   border: 1px solid #999;
   border-bottom: 0;
+}
+
+section {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.item {
+  padding: 15px;
+}
+.item p {
+  margin-bottom: 15px;
+}
+
+.pickupContentsArea, section.main {
+  background: url(../img/bg/pickup.png);
+}
+
+article {
+  width: 546px;
+  padding: 0 7px;
+}
+
+p::after {
+  content: "今日は、寒いです。";
+  font-family: sans-serif;
+}
+
+/* @use "sass:math";  先頭に記述*/
+.example01 {
+  width: 25px;
+}
+
+.example02 {
+  width: 25px;
+}
+
+.example03 {
+  width: 25px;
 }
 
 /*# sourceMappingURL=sample.css.map */

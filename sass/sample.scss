@@ -1,3 +1,4 @@
+ @use "sass:math";
 #main {
     display: flex;
     width: 640px;
@@ -66,3 +67,49 @@ ul.pageNav {
         bottom: 0;
     }
 }
+
+section {
+    $value: 30px;
+    margin-top: $value;
+    margin-bottom: $value;
+}
+
+.item {
+    $value: 15px;
+    padding: $value;
+    p {
+        margin-bottom: $value;
+    }
+}
+
+$IMG_BOX: '.pickupContentsArea, section.main';
+$IMG_PATH: '../img/bg/';
+
+#{$IMG_BOX} {
+    background: url(#{$IMG_PATH}pickup.png);
+}
+
+$main_width: 560px;
+ article {
+    $padding: 7px;
+    width: $main_width - $padding * 2;
+    padding: 0 $padding;
+ }
+
+ p::after {
+    content: "今日は、" + 寒いです。;
+    font-family: sans- + "serif";
+ }
+
+
+/* @use "sass:math";  先頭に記述*/
+ .example01 {
+    $value: 50px;
+    width: math.div($value, 2);
+ }
+ .example02 {
+    width: math.div(50px, 2);
+ }
+ .example03 {
+    width: 50px - math.div(50, 2);
+ }
