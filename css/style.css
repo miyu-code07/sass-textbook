@@ -1,0 +1,31 @@
+code {
+  padding: 0.25em;
+  line-height: 0;
+}
+
+/*base*/
+body {
+  color: #ddd;
+}
+
+/*normalize*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*index*/
+body {
+  font-size: 16px;
+}
+
+body {
+  font-weight: 700;
+}
+
+body {
+  background: blue;
+  color: green;
+}
+
+/*# sourceMappingURL=style.css.map */
