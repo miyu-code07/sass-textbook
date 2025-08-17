@@ -52,4 +52,18 @@ li {
   border: 1px solid red;
 }
 
+/*エクステンド専用のプレースホルダーセレクタ*/
+section, .item01 {
+  padding: 15px;
+  border: 1px solid #999;
+}
+
+.item01 {
+  margin-bottom: 20px;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
 /*# sourceMappingURL=style.css.map */
