@@ -66,4 +66,16 @@ section {
   margin-bottom: 60px;
 }
 
+/*@mediaとエクステンド*/
+@media all and (orientation: landscape) {
+  a {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #eee;
+  }
+}
+.btn {
+  /*存在しないセレクタのエラー警告回避*/
+}
+
 /*# sourceMappingURL=style.css.map */
