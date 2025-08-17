@@ -1,9 +1,6 @@
-@use "code";
-@use "variables" as v;
-
 @use "foundation";
-@use "../css/color";
-body {
-    background: v.$color-main;
-    color: v.$color-sub;
+@use "global" as g;
+li {
+    @include g.list-reset;
+    color: g.$color-error;
 }
