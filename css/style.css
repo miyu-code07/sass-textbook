@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*base*/
 body {
   color: #ddd;
@@ -21,6 +22,34 @@ li {
   padding: 0;
   list-style: none;
   color: red;
+}
+
+/*エクステンド*/
+.notes, .item small {
+  color: #d92c25;
+  font-weight: bold;
+  text-align: center;
+}
+
+.bd, .item small {
+  border-top: 1px solid #900;
+  border-bottom: 1px solid #900;
+}
+
+.item small {
+  display: block;
+  padding: 10px;
+}
+
+/*連鎖*/
+.att, .attBox, .notes01 {
+  color: red;
+  font-weight: normal;
+}
+
+.attBox, .notes01 {
+  padding: 15px;
+  border: 1px solid red;
 }
 
 /*# sourceMappingURL=style.css.map */
