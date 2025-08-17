@@ -78,4 +78,11 @@ section {
   /*存在しないセレクタのエラー警告回避*/
 }
 
+/*ミックスイン*/
+.relatedArea {
+  padding: 15px;
+  background: #999;
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */

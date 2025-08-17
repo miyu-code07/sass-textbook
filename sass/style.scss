@@ -69,6 +69,15 @@ section {
     @extend %addBtn !optional;
 }
 
+/*ミックスイン*/
+@mixin boxSet {
+    padding: 15px;
+    background: #999;
+    color: white;
+}
+.relatedArea {
+    @include boxSet;
+}
 
 
 
