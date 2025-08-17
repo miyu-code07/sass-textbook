@@ -37,5 +37,20 @@ li {
     @extend .attBox;
 }
 
+/*エクステンド専用のプレースホルダーセレクタ*/
+%boxBase {
+  padding: 15px;
+  border: 1px solid #999;
+}
+.item01 {
+  @extend %boxBase;
+  margin-bottom: 20px;
+}
+section {
+  @extend %boxBase;
+  margin-bottom: 60px;
+}
+
+
 
 
