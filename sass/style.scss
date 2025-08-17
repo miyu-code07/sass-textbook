@@ -79,5 +79,23 @@ section {
     @include boxSet;
 }
 
+.pickupArea {
+    @include boxSet;
+}
+
+@mixin kadomaru($value) {
+    -moz-border-radius: $value;
+    -webkit-border-radius: $value;
+    border-radius: $value;
+}
+.box {
+    @include kadomaru(3px);
+    background: #eee;
+}
+.item {
+    border: 1px solid #999;
+    @include kadomaru(5px 10px);
+}
+
 
 

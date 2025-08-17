@@ -85,4 +85,24 @@ section {
   color: white;
 }
 
+.pickupArea {
+  padding: 15px;
+  background: #999;
+  color: white;
+}
+
+.box {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #eee;
+}
+
+.item {
+  border: 1px solid #999;
+  -moz-border-radius: 5px 10px;
+  -webkit-border-radius: 5px 10px;
+  border-radius: 5px 10px;
+}
+
 /*# sourceMappingURL=style.css.map */
