@@ -4,3 +4,38 @@ li {
     @include g.list-reset;
     color: g.$color-error;
 }
+/*エクステンド*/
+.notes {
+    color: #d92c25;
+    font-weight: bold;
+    text-align: center;
+}
+.bd {
+    border-top: 1px solid #900;
+    border-bottom: 1px solid #900;
+}
+
+.item {
+    small {
+        display: block;
+        padding: 10px;
+        @extend .notes;
+        @extend .bd;
+    }
+}
+/*連鎖*/
+.att {
+    color: red;
+    font-weight: normal;
+}
+.attBox {
+    @extend .att;
+    padding: 15px;
+    border: 1px solid red;
+}
+.notes01 {
+    @extend .attBox;
+}
+
+
+
