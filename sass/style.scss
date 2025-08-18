@@ -1,15 +1,19 @@
 @use "foundation";
 @use "global" as g;
+@use "sass:string";
+
 li {
     @include g.list-reset;
     color: g.$color-error;
 }
+
 /*エクステンド*/
 .notes {
     color: #d92c25;
     font-weight: bold;
     text-align: center;
 }
+
 .bd {
     border-top: 1px solid #900;
     border-bottom: 1px solid #900;
@@ -23,42 +27,49 @@ li {
         @extend .bd;
     }
 }
+
 /*連鎖*/
 .att {
     color: red;
     font-weight: normal;
 }
+
 .attBox {
     @extend .att;
     padding: 15px;
     border: 1px solid red;
 }
+
 .notes01 {
     @extend .attBox;
 }
 
 /*エクステンド専用のプレースホルダーセレクタ*/
 %boxBase {
-  padding: 15px;
-  border: 1px solid #999;
+    padding: 15px;
+    border: 1px solid #999;
 }
+
 .item01 {
-  @extend %boxBase;
-  margin-bottom: 20px;
+    @extend %boxBase;
+    margin-bottom: 20px;
 }
+
 section {
-  @extend %boxBase;
-  margin-bottom: 60px;
+    @extend %boxBase;
+    margin-bottom: 60px;
 }
+
 /*@mediaとエクステンド*/
 
 
 @media all and (orientation: landscape) {
     %btnBase {
-    display: inline-block;
-    padding: 5px 10px;
-    background: #eee;
-}
+        display: inline-block;
+        padding: 5px 10px;
+        background: #eee;
+    }
+
     a {
         @extend %btnBase;
     }
@@ -75,6 +86,7 @@ section {
     background: #999;
     color: white;
 }
+
 .relatedArea {
     @include boxSet;
 }
@@ -88,10 +100,12 @@ section {
     -webkit-border-radius: $value;
     border-radius: $value;
 }
+
 .boxA {
     @include kadomaru;
     background: #eee;
 }
+
 .boxB {
     @include kadomaru();
     background: #f1f1f1;
@@ -102,10 +116,12 @@ section {
     margin: $margin;
     padding: $padding;
 }
+
 .boxA {
     @include boxBase;
     background: #eee;
 }
+
 .boxB {
     @include boxBase(0 0 50px, 20px);
     background: #f1f1f1;
@@ -116,9 +132,69 @@ section {
     @include boxBase(0 0 50px);
     background: #f1f1f1;
 }
+
 /*第2引数のみ変更*/
 .boxB {
     @include boxBase($padding: 20px);
     background: #f1f1f1;
 }
 
+
+/*@use "sass:string";*/
+@mixin shadow($value) {
+    text-shadow: $value;
+}
+
+/*配列にするパターン*/
+h2 {
+    @include shadow((8px 8px 0 #999, 15px -10px 0 #eee));
+}
+
+/*文字列にするパターン*/
+h2 {
+    @include shadow(string.unquote("8px 8px 0 #999, 15px -10px 0 #eee"));
+}
+
+/*可変長引数(Variable Arguments)*/
+@mixin shadow($value...) {
+    text-shadow: $value;
+}
+h2 {
+    @include shadow(8px 8px 0 #999, 15px -10px 0 #eee);
+}
+
+@mixin boxBase($w: 250px, $pd: 15px, $bg_c: #fff, $bd_c: #ccc) {
+    width: $w;
+    padding: $pd;
+    background-color: $bg_c;
+    border: 1px solid $bd_c;
+}
+
+$values: 300px, 20px;
+
+.item {
+    display: flex;
+    @include boxBase($values...);
+}
+
+/*@content*/
+@mixin media($width-media: 768px) {
+    @media only screen and (max-width: $width-media) {
+        @content;
+    }
+}
+.item {
+    .image {
+        float: left;
+        @include media {
+            float: none;
+        }
+    }
+    .text {
+        overflow: hidden;
+        margin-left: 15px;
+        @include media {
+            margin-left: 0;
+        }
+    }
+}

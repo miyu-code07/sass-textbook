@@ -132,4 +132,47 @@ section {
   background: #f1f1f1;
 }
 
+/*@use "sass:string";*/
+/*配列にするパターン*/
+h2 {
+  text-shadow: 8px 8px 0 #999, 15px -10px 0 #eee;
+}
+
+/*文字列にするパターン*/
+h2 {
+  text-shadow: 8px 8px 0 #999, 15px -10px 0 #eee;
+}
+
+/*可変長引数(Variable Arguments)*/
+h2 {
+  text-shadow: 8px 8px 0 #999, 15px -10px 0 #eee;
+}
+
+.item {
+  display: flex;
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+/*@content*/
+.item .image {
+  float: left;
+}
+@media only screen and (max-width: 768px) {
+  .item .image {
+    float: none;
+  }
+}
+.item .text {
+  overflow: hidden;
+  margin-left: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .item .text {
+    margin-left: 0;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
