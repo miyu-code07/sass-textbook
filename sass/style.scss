@@ -159,6 +159,7 @@ h2 {
 @mixin shadow($value...) {
     text-shadow: $value;
 }
+
 h2 {
     @include shadow(8px 8px 0 #999, 15px -10px 0 #eee);
 }
@@ -183,18 +184,95 @@ $values: 300px, 20px;
         @content;
     }
 }
+
 .item {
     .image {
         float: left;
+
         @include media {
             float: none;
         }
     }
+
     .text {
         overflow: hidden;
         margin-left: 15px;
+
         @include media {
             margin-left: 0;
+        }
+    }
+}
+
+/*@at-root*/
+/*.block {
+    .element-A {
+        width: 80%;
+    }
+
+    @at-root .element-B {
+        width: 100%;
+    }
+}*/
+
+.block {
+    .element-A {
+        width: 80%;
+    }
+    @at-root {
+        .element-B {
+            width: 100%;
+        }
+        .element-C {
+            width: 50%;
+        }
+    }
+}
+/*メディア@at-root*/
+.block {
+    width: 50%;
+    @media (max-width: 640px) {
+        width: 100%;
+        @at-root {
+            .item {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+/*@at-rootオプション without*/
+.block {
+    width: 50%;
+    @media (max-width: 640px) {
+        width: 100%;
+        @at-root (without: media) {
+            .item {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+/*@at-rootオプション rule*/
+.block {
+    width: 50%;
+    @media (max-width: 640px) {
+        width: 100%;
+        @at-root (without: media rule) {
+            .item {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+/*@at-rootオプション with*/
+.block {
+    width: 50%;
+    @media (max-width: 640px) {
+        width: 100%;
+        @at-root (with: media) {
+            .item {
+                margin-bottom: 30px;
+            }
         }
     }
 }
