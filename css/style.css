@@ -175,4 +175,77 @@ h2 {
   }
 }
 
+/*@at-root*/
+/*.block {
+    .element-A {
+        width: 80%;
+    }
+
+    @at-root .element-B {
+        width: 100%;
+    }
+}*/
+.block .element-A {
+  width: 80%;
+}
+.element-B {
+  width: 100%;
+}
+
+.element-C {
+  width: 50%;
+}
+
+/*メディア@at-root*/
+.block {
+  width: 50%;
+}
+@media (max-width: 640px) {
+  .block {
+    width: 100%;
+  }
+  .item {
+    margin-bottom: 30px;
+  }
+}
+
+/*@at-rootオプション without*/
+.block {
+  width: 50%;
+}
+@media (max-width: 640px) {
+  .block {
+    width: 100%;
+  }
+}
+.block .item {
+  margin-bottom: 30px;
+}
+
+/*@at-rootオプション rule*/
+.block {
+  width: 50%;
+}
+@media (max-width: 640px) {
+  .block {
+    width: 100%;
+  }
+}
+.item {
+  margin-bottom: 30px;
+}
+
+/*@at-rootオプション with*/
+.block {
+  width: 50%;
+}
+@media (max-width: 640px) {
+  .block {
+    width: 100%;
+  }
+  .item {
+    margin-bottom: 30px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
