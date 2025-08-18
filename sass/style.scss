@@ -276,3 +276,28 @@ $values: 300px, 20px;
         }
     }
 }
+
+/*インターポレーション*/
+$imgPath: '../common/images/';
+#main {
+    background: url(#{$imgPath}main.png);
+}
+p.sampleB {
+    $font-size: 12px;
+    $line-height: 30px;
+    font: #{$font-size}/#{$line-height};
+}
+@for $i from 0 to 2 {
+    .mt#{$i * 5} {
+        margin-top: 5px * $i;
+    }
+}
+$property: margin;
+
+p {
+    #{$property}-bottom: 0;
+}
+$text: "CSS";
+.#{$text} a::after {
+    content: "#{$text} Tips";
+}

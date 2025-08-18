@@ -248,4 +248,29 @@ h2 {
   }
 }
 
+/*インターポレーション*/
+#main {
+  background: url(../common/images/main.png);
+}
+
+p.sampleB {
+  font: 12px/30px;
+}
+
+.mt0 {
+  margin-top: 0px;
+}
+
+.mt5 {
+  margin-top: 5px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.CSS a::after {
+  content: "CSS Tips";
+}
+
 /*# sourceMappingURL=style.css.map */
