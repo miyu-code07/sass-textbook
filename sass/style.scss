@@ -378,3 +378,11 @@ $value: 300;
     }
     $value: $value - 32;
 }
+
+/*@eachリスト（配列）の要素に対して繰り返す*/
+$nameList: top, about, company, contact;
+@each $name in $nameList {
+    .body-#{$name} {
+        background-image: url(../img/bg_#{$name}.png);
+    }
+}

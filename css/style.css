@@ -362,4 +362,21 @@ p {
   width: 408px;
 }
 
+/*@eachリスト（配列）の要素に対して繰り返す*/
+.body-top {
+  background-image: url(../img/bg_top.png);
+}
+
+.body-about {
+  background-image: url(../img/bg_about.png);
+}
+
+.body-company {
+  background-image: url(../img/bg_company.png);
+}
+
+.body-contact {
+  background-image: url(../img/bg_contact.png);
+}
+
 /*# sourceMappingURL=style.css.map */
