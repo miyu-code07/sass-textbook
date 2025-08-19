@@ -333,3 +333,17 @@ $getStyle: 2;
 .box {
     @include style;
 }
+
+/*@for繰り返し*/
+@for $value from 1 through 3 {
+    .throughSample_#{$value} {
+        margin-bottom: 1px * $value;
+    }
+}
+
+@for $value from 1 to 3 {
+    .toSample_#{$value} {
+        margin-bottom: 1px * $value;
+    }
+}
+
