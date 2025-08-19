@@ -301,3 +301,35 @@ $text: "CSS";
 .#{$text} a::after {
     content: "#{$text} Tips";
 }
+
+/*@if条件分岐*/
+$generalStyle: true;
+@if $generalStyle {
+    .text-accent {
+        color: red;
+    }
+    .text-link {
+        color: blue;
+    }
+}
+$getStyle: 2;
+
+@mixin style {
+    @if $getStyle == 1 {
+        margin: 0 0 30px;
+        padding: 15px;
+        background: #eee;
+    }
+    @else if $getStyle == 2 {
+        margin: 0 10px 15px;
+        padding: 20px 15px;
+        border: 2px solid #333;
+    }
+    @else {
+        margin: 0 0 10px;
+    }
+}
+
+.box {
+    @include style;
+}
