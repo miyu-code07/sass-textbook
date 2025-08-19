@@ -289,6 +289,7 @@ p {
 }
 
 /*@for繰り返し*/
+/*throughは指定した数値を含んで繰り返す↓3回以下繰り返す*/
 .throughSample_1 {
   margin-bottom: 1px;
 }
@@ -301,12 +302,64 @@ p {
   margin-bottom: 3px;
 }
 
+/*toは指定した数値を含まず繰り返す↓3回未満繰り返す*/
 .toSample_1 {
   margin-bottom: 1px;
 }
 
 .toSample_2 {
   margin-bottom: 2px;
+}
+
+/**/
+.mt_10 {
+  margin-top: 10px;
+}
+
+.mb_10 {
+  margin-bottom: 10px;
+}
+
+.mt_20 {
+  margin-top: 20px;
+}
+
+.mb_20 {
+  margin-bottom: 20px;
+}
+
+/*@while柔軟な繰り返し*/
+.mt_20 {
+  margin-top: 20px;
+}
+
+.mb_20 {
+  margin-bottom: 20px;
+}
+
+.mt_10 {
+  margin-top: 10px;
+}
+
+.mb_10 {
+  margin-bottom: 10px;
+}
+
+/**/
+.box_value {
+  width: 600px;
+}
+
+.box_value {
+  width: 536px;
+}
+
+.box_value {
+  width: 472px;
+}
+
+.box_value {
+  width: 408px;
 }
 
 /*# sourceMappingURL=style.css.map */

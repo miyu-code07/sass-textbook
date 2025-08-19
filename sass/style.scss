@@ -335,15 +335,46 @@ $getStyle: 2;
 }
 
 /*@for繰り返し*/
+/*throughは指定した数値を含んで繰り返す↓3回以下繰り返す*/
 @for $value from 1 through 3 {
     .throughSample_#{$value} {
         margin-bottom: 1px * $value;
     }
 }
-
+/*toは指定した数値を含まず繰り返す↓3回未満繰り返す*/
 @for $value from 1 to 3 {
     .toSample_#{$value} {
         margin-bottom: 1px * $value;
     }
 }
 
+/**/
+@for $value from 1 through 2 {
+    .mt_#{$value * 10} {
+        margin-top: 10px * $value;
+    }
+    .mb_#{$value * 10} {
+        margin-bottom: 10px * $value;
+    }
+}
+
+/*@while柔軟な繰り返し*/
+$value: 20;
+@while $value > 0 {
+    .mt_#{$value} {
+        margin-top: $value + px;
+    }
+    .mb_#{$value} {
+        margin-bottom: $value + px;
+    }
+    $value: $value - 10;
+}
+
+/**/
+$value: 300;
+@while $value > 200 {
+    .box_#{value} {
+        width: 2px * $value;
+    }
+    $value: $value - 32;
+}
