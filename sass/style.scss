@@ -516,3 +516,55 @@ $width: 105px;
 .boxA {
     width: halfSize(200px);
 }
+
+/*@debug結果確認*/
+@debug 10em + 12em;
+
+$value: 500;
+@function debugTest() {
+    @debug $value;
+    $value: $value - 100;
+    $value: $value - 100;
+    @debug $value;
+    $value: $value - 100;
+    $value: $value - 100;
+    $value: $value - 100;
+    @debug $value;
+    @return $value + px;
+}
+
+.boxA {
+    width: debugTest();
+}
+/*@warnで警告表示*/
+/*@use 'sass:math'; 今回はmathを使用*/
+$value: 1000px;
+@function warnTest() {
+    /*math.is-unitless()関数は単位があるかなしかを返す*/
+    @if math.is-unitless($value) {
+        $value: $value + px;
+    }
+    @else {
+        @warn "#{$value}は駄目！$valueに単位は入れないで！";
+    }
+    @return $value;
+}
+.box {
+    width: warnTest();
+}
+/*@errorでエラーを出力し、処理を中断する*/
+/*@use 'sass:math'; 今回はmathを使用*/
+$value: 1000px;
+@function errorTest() {
+    /*math.is-unitless()関数は単位があるかなしかを返す*/
+    @if math.is-unitless($value) {
+        $value: $value + px;
+    }
+    @else {
+        @error "#{$value}は駄目！$valueに単位は入れないで！";
+    }
+    @return $value;
+}
+.box {
+    width: errorTest();
+}
