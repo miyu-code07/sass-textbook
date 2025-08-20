@@ -455,4 +455,16 @@ body {
   color: #cccccc;
 }
 
+/*list.nth()関数。指定したリストのN番目の値を取得することができる*/
+/*@use 'sass:list';*/
+.item {
+  background: url(about.png);
+}
+
+/*map.get関数。Map型専用関数。指定したキーの値を取得する*/
+/*@use 'sass:map';*/
+.sns-facebook {
+  color: #3b5998;
+}
+
 /*# sourceMappingURL=style.css.map */

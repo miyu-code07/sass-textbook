@@ -4,6 +4,8 @@
 @use 'sass:color'; // モジュール
 @use 'sass:color' as c; // モジュール エイリアス
 @use 'sass:math'; // モジュール
+@use 'sass:list'; // モジュール
+@use 'sass:map'; // モジュール
 
 li {
     @include g.list-reset;
@@ -463,3 +465,19 @@ $b: #fff;
     color: color.mix($a, $b, 20%);
 }
 
+/*list.nth()関数。指定したリストのN番目の値を取得することができる*/
+/*@use 'sass:list';*/
+$nameList: top, about, company;
+.item {
+    background: url(#{list.nth($nameList, 2)}.png);
+}
+
+/*map.get関数。Map型専用関数。指定したキーの値を取得する*/
+/*@use 'sass:map';*/
+$colors: (
+    instagram: #d1006b,
+    facebook: #3b5998,
+);
+.sns-facebook {
+    color: map.get($colors, facebook);
+}
