@@ -426,3 +426,40 @@ $width: 100%;
 .boxB {
   width: math.floor(math.div($width, 6));
 }
+/*rgb(関数)モジュール不要*/
+.item {
+    color: rgb(#6a5468, 0.3);
+}
+
+/*color.scale()関数*/
+/*@use 'sass:color';*/
+body {
+    color: color.scale(#000, $lightness: 40%);
+}
+body {
+    color: color.scale(#fff, $lightness: -20%);
+}
+
+$c: #555;
+.boxA {
+    color: color.scale($c, $lightness: 20%);
+}
+
+/*color.mix()関数カラーコードの中間色を作る*/
+body {
+    color: color.mix(#000, #fff, 50%);
+}
+
+body {
+    color: color.mix(rgba(0, 0, 0, 0.4), #fff, 50%);
+}
+
+$a: #000;
+$b: #fff;
+.boxA {
+    color: color.mix($a, $b, 80%);
+}
+.boxB {
+    color: color.mix($a, $b, 20%);
+}
+
