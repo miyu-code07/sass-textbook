@@ -419,4 +419,40 @@ p {
   width: 16%;
 }
 
+/*rgb(関数)モジュール不要*/
+.item {
+  color: rgba(106, 84, 104, 0.3);
+}
+
+/*color.scale()関数*/
+/*@use 'sass:color';*/
+body {
+  color: #666666;
+}
+
+body {
+  color: #cccccc;
+}
+
+.boxA {
+  color: #777777;
+}
+
+/*color.mix()関数カラーコードの中間色を作る*/
+body {
+  color: rgb(127.5, 127.5, 127.5);
+}
+
+body {
+  color: rgba(204, 204, 204, 0.7);
+}
+
+.boxA {
+  color: #333333;
+}
+
+.boxB {
+  color: #cccccc;
+}
+
 /*# sourceMappingURL=style.css.map */
