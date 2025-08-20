@@ -481,3 +481,38 @@ $colors: (
 .sns-facebook {
     color: map.get($colors, facebook);
 }
+
+/*@function*/
+/*@use 'sass:math'; 今回はmathも使うのでmathモジュール読み込み*/
+/*@function halfSize($value) {
+    @return math.div($value, 2);
+}
+.boxA {
+    width: halfSize(100px);
+}*/
+/*ネイティブ関数と組み合わせる*/
+/*@function halfSize($value) {
+    @return math.round(math.div($value, 2));
+}
+.boxA {
+    width: halfSize(105px);
+}*/
+/*値を変数に入れる*/
+/*$width: 105px;
+@function halfSize() {
+    @return math.round(math.div($width, 2));
+}
+.boxA {
+    width: halfSize();
+}*/
+/*引数に初期値を設定する*/
+$width: 105px;
+@function halfSize($value: $width) {
+    @return math.round(math.div($value, 2));
+}
+.boxA {
+    width: halfSize();
+}
+.boxA {
+    width: halfSize(200px);
+}
