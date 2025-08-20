@@ -1,17 +1,540 @@
-/* Error: "1000pxは駄目！$valueに単位は入れないで！"
- *     ,
- * 569 |     width: errorTest();
- *     |            ^^^^^^^^^^^
- *     '
- *   sass/style.scss 569:12  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: "1000px\306f \99c4 \76ee \ff01 $value\306b \5358 \4f4d \306f \5165 \308c \306a \3044 \3067 \ff01 "\a     \2577 \a 569 \2502      width: errorTest();\a     \2502             ^^^^^^^^^^^\a     \2575 \a   sass/style.scss 569:12  root stylesheet';
+@charset "UTF-8";
+/*base*/
+body {
+  color: #ddd;
 }
+
+/*normalize*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*index*/
+body {
+  font-size: 16px;
+}
+
+/*variables*/
+/*list*/
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: red;
+}
+
+/*エクステンド*/
+.notes, .item small {
+  color: #d92c25;
+  font-weight: bold;
+  text-align: center;
+}
+
+.bd, .item small {
+  border-top: 1px solid #900;
+  border-bottom: 1px solid #900;
+}
+
+.item small {
+  display: block;
+  padding: 10px;
+}
+
+/*連鎖*/
+.att, .attBox, .notes01 {
+  color: red;
+  font-weight: normal;
+}
+
+.attBox, .notes01 {
+  padding: 15px;
+  border: 1px solid red;
+}
+
+/*エクステンド専用のプレースホルダーセレクタ*/
+section, .item01 {
+  padding: 15px;
+  border: 1px solid #999;
+}
+
+.item01 {
+  margin-bottom: 20px;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+/*@mediaとエクステンド*/
+@media all and (orientation: landscape) {
+  a {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #eee;
+  }
+}
+.btn {
+  /*存在しないセレクタのエラー警告回避*/
+}
+
+/*ミックスイン*/
+.relatedArea {
+  padding: 15px;
+  background: #999;
+  color: white;
+}
+
+.pickupArea {
+  padding: 15px;
+  background: #999;
+  color: white;
+}
+
+.boxA {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #eee;
+}
+
+.boxB {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #f1f1f1;
+}
+
+/*ミックスイン引数複数指定*/
+.boxA {
+  margin: 30px 0;
+  padding: 10px;
+  background: #eee;
+}
+
+.boxB {
+  margin: 0 0 50px;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/*第1引数のみ変更*/
+.boxB {
+  margin: 0 0 50px;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/*第2引数のみ変更*/
+.boxB {
+  margin: 30px 0;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/*@use "sass:string";*/
+/*配列にするパターン*/
+h2 {
+  text-shadow: 8px 8px 0 #999, 15px -10px 0 #eee;
+}
+
+/*文字列にするパターン*/
+h2 {
+  text-shadow: 8px 8px 0 #999, 15px -10px 0 #eee;
+}
+
+/*可変長引数(Variable Arguments)*/
+h2 {
+  text-shadow: 8px 8px 0 #999, 15px -10px 0 #eee;
+}
+
+.item {
+  display: flex;
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+/*@content*/
+.item .image {
+  float: left;
+}
+@media only screen and (max-width: 768px) {
+  .item .image {
+    float: none;
+  }
+}
+.item .text {
+  overflow: hidden;
+  margin-left: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .item .text {
+    margin-left: 0;
+  }
+}
+
+/*@at-root*/
+/*.block {
+    .element-A {
+        width: 80%;
+    }
+
+    @at-root .element-B {
+        width: 100%;
+    }
+}*/
+.block .element-A {
+  width: 80%;
+}
+.element-B {
+  width: 100%;
+}
+
+.element-C {
+  width: 50%;
+}
+
+/*メディア@at-root*/
+.block {
+  width: 50%;
+}
+@media (max-width: 640px) {
+  .block {
+    width: 100%;
+  }
+  .item {
+    margin-bottom: 30px;
+  }
+}
+
+/*@at-rootオプション without*/
+.block {
+  width: 50%;
+}
+@media (max-width: 640px) {
+  .block {
+    width: 100%;
+  }
+}
+.block .item {
+  margin-bottom: 30px;
+}
+
+/*@at-rootオプション rule*/
+.block {
+  width: 50%;
+}
+@media (max-width: 640px) {
+  .block {
+    width: 100%;
+  }
+}
+.item {
+  margin-bottom: 30px;
+}
+
+/*@at-rootオプション with*/
+.block {
+  width: 50%;
+}
+@media (max-width: 640px) {
+  .block {
+    width: 100%;
+  }
+  .item {
+    margin-bottom: 30px;
+  }
+}
+
+/*インターポレーション*/
+#main {
+  background: url(../common/images/main.png);
+}
+
+p.sampleB {
+  font: 12px/30px;
+}
+
+.mt0 {
+  margin-top: 0px;
+}
+
+.mt5 {
+  margin-top: 5px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.CSS a::after {
+  content: "CSS Tips";
+}
+
+/*@if条件分岐*/
+.text-accent {
+  color: red;
+}
+
+.text-link {
+  color: blue;
+}
+
+.box {
+  margin: 0 10px 15px;
+  padding: 20px 15px;
+  border: 2px solid #333;
+}
+
+/*@for繰り返し*/
+/*throughは指定した数値を含んで繰り返す↓3回以下繰り返す*/
+.throughSample_1 {
+  margin-bottom: 1px;
+}
+
+.throughSample_2 {
+  margin-bottom: 2px;
+}
+
+.throughSample_3 {
+  margin-bottom: 3px;
+}
+
+/*toは指定した数値を含まず繰り返す↓3回未満繰り返す*/
+.toSample_1 {
+  margin-bottom: 1px;
+}
+
+.toSample_2 {
+  margin-bottom: 2px;
+}
+
+/**/
+.mt_10 {
+  margin-top: 10px;
+}
+
+.mb_10 {
+  margin-bottom: 10px;
+}
+
+.mt_20 {
+  margin-top: 20px;
+}
+
+.mb_20 {
+  margin-bottom: 20px;
+}
+
+/*@while柔軟な繰り返し*/
+.mt_20 {
+  margin-top: 20px;
+}
+
+.mb_20 {
+  margin-bottom: 20px;
+}
+
+.mt_10 {
+  margin-top: 10px;
+}
+
+.mb_10 {
+  margin-bottom: 10px;
+}
+
+/**/
+.box_value {
+  width: 600px;
+}
+
+.box_value {
+  width: 536px;
+}
+
+.box_value {
+  width: 472px;
+}
+
+.box_value {
+  width: 408px;
+}
+
+/*@eachリスト（配列）の要素に対して繰り返す*/
+.body-top {
+  background-image: url(../img/bg_top.png);
+}
+
+.body-about {
+  background-image: url(../img/bg_about.png);
+}
+
+.body-company {
+  background-image: url(../img/bg_company.png);
+}
+
+.body-contact {
+  background-image: url(../img/bg_contact.png);
+}
+
+/*関数モジュール*/
+/*@use 'sass:color';*/
+.example {
+  background: rgb(76.5, 76.5, 76.5);
+}
+
+/*@use 'sass:color' as c;　エイリアス*/
+.example {
+  background: rgb(76.5, 76.5, 76.5);
+}
+
+/*math.abs()*/
+/*@use 'sass:math';*/
+.itemA {
+  margin-top: -100px;
+  padding-top: 100px;
+}
+
+/*math.round()小数点以下四捨五入*/
+/*@use 'sass:math';*/
+/*少数点も表示される*/
+.boxA {
+  width: 16.6666666667%;
+}
+
+/*小数点を四捨五入する*/
+.boxB {
+  width: 17%;
+}
+
+/*math.ceil()小数点以下切り上げ*/
+.boxB {
+  width: 34%;
+}
+
+/*math.floor()小数点以下切り上げ*/
+.boxB {
+  width: 16%;
+}
+
+/*rgb(関数)モジュール不要*/
+.item {
+  color: rgba(106, 84, 104, 0.3);
+}
+
+/*color.scale()関数*/
+/*@use 'sass:color';*/
+body {
+  color: #666666;
+}
+
+body {
+  color: #cccccc;
+}
+
+.boxA {
+  color: #777777;
+}
+
+/*color.mix()関数カラーコードの中間色を作る*/
+body {
+  color: rgb(127.5, 127.5, 127.5);
+}
+
+body {
+  color: rgba(204, 204, 204, 0.7);
+}
+
+.boxA {
+  color: #333333;
+}
+
+.boxB {
+  color: #cccccc;
+}
+
+/*list.nth()関数。指定したリストのN番目の値を取得することができる*/
+/*@use 'sass:list';*/
+.item {
+  background: url(about.png);
+}
+
+/*map.get関数。Map型専用関数。指定したキーの値を取得する*/
+/*@use 'sass:map';*/
+.sns-facebook {
+  color: #3b5998;
+}
+
+/*@function*/
+/*@use 'sass:math'; 今回はmathも使うのでmathモジュール読み込み*/
+/*@function halfSize($value) {
+    @return math.div($value, 2);
+}
+.boxA {
+    width: halfSize(100px);
+}*/
+/*ネイティブ関数と組み合わせる*/
+/*@function halfSize($value) {
+    @return math.round(math.div($value, 2));
+}
+.boxA {
+    width: halfSize(105px);
+}*/
+/*値を変数に入れる*/
+/*$width: 105px;
+@function halfSize() {
+    @return math.round(math.div($width, 2));
+}
+.boxA {
+    width: halfSize();
+}*/
+/*引数に初期値を設定する*/
+.boxA {
+  width: 53px;
+}
+
+.boxA {
+  width: 100px;
+}
+
+/*@debug結果確認*/
+.boxA {
+  width: 0px;
+}
+
+/*@warnで警告表示*/
+/*@use 'sass:math'; 今回はmathを使用*/
+.box {
+  width: 1000px;
+}
+
+/*@errorでエラーを出力し、処理を中断する*/
+/*@use 'sass:math'; 今回はmathを使用*/
+/*$value: 1000px;
+@function errorTest() {
+    // math.is-unitless()関数は単位があるかなしかを返す
+    @if math.is-unitless($value) {
+        $value: $value + px;
+    }
+    @else {
+        @error "1000pxは駄目！$valueに単位は入れないで！";
+    }
+    @return $value;
+}
+.box {
+    width: errorTest();
+}*/
+/*defaultフラグ*/
+.boxA {
+  width: 320px;
+  height: 50%;
+}
+
+.boxB {
+  width: 100vw;
+  height: 80px;
+}
+
+/*# sourceMappingURL=style.css.map */

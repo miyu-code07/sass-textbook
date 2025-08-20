@@ -554,9 +554,9 @@ $value: 1000px;
 }
 /*@errorでエラーを出力し、処理を中断する*/
 /*@use 'sass:math'; 今回はmathを使用*/
-$value: 1000px;
+/*$value: 1000px;
 @function errorTest() {
-    /*math.is-unitless()関数は単位があるかなしかを返す*/
+    // math.is-unitless()関数は単位があるかなしかを返す
     @if math.is-unitless($value) {
         $value: $value + px;
     }
@@ -567,4 +567,20 @@ $value: 1000px;
 }
 .box {
     width: errorTest();
+}*/
+
+/*defaultフラグ*/
+$width: 320px;
+$height: 80px;
+.boxA {
+    $width: 33.3% !default;
+    $height: 50%;
+    width: $width; // グローバル$widthを参照
+    height: $height; // ローカル$heightを参照
+}
+.boxB {
+    $width: 100vw;
+    $height: 50vw !default;
+    width: $width; // ローカル$widthを参照
+    height: $height; // グローバル$heightを参照
 }
