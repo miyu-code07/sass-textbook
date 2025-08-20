@@ -379,4 +379,44 @@ p {
   background-image: url(../img/bg_contact.png);
 }
 
+/*関数モジュール*/
+/*@use 'sass:color';*/
+.example {
+  background: rgb(76.5, 76.5, 76.5);
+}
+
+/*@use 'sass:color' as c;　エイリアス*/
+.example {
+  background: rgb(76.5, 76.5, 76.5);
+}
+
+/*math.abs()*/
+/*@use 'sass:math';*/
+.itemA {
+  margin-top: -100px;
+  padding-top: 100px;
+}
+
+/*math.round()小数点以下四捨五入*/
+/*@use 'sass:math';*/
+/*少数点も表示される*/
+.boxA {
+  width: 16.6666666667%;
+}
+
+/*小数点を四捨五入する*/
+.boxB {
+  width: 17%;
+}
+
+/*math.ceil()小数点以下切り上げ*/
+.boxB {
+  width: 34%;
+}
+
+/*math.floor()小数点以下切り上げ*/
+.boxB {
+  width: 16%;
+}
+
 /*# sourceMappingURL=style.css.map */

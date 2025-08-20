@@ -1,6 +1,9 @@
 @use "foundation";
 @use "global" as g;
-@use "sass:string";
+@use "sass:string"; // モジュール
+@use 'sass:color'; // モジュール
+@use 'sass:color' as c; // モジュール エイリアス
+@use 'sass:math'; // モジュール
 
 li {
     @include g.list-reset;
@@ -385,4 +388,41 @@ $nameList: top, about, company, contact;
     .body-#{$name} {
         background-image: url(../img/bg_#{$name}.png);
     }
+}
+
+/*関数モジュール*/
+/*@use 'sass:color';*/
+.example {
+    background: color.scale(#000000, $lightness: 30%);
+}
+/*@use 'sass:color' as c;　エイリアス*/
+.example {
+    background: c.scale(#000000, $lightness: 30%);
+}
+/*math.abs()*/
+/*@use 'sass:math';*/
+$space: -100px;
+
+.itemA {
+    margin-top: $space;
+    padding-top: math.abs($space);
+}
+/*math.round()小数点以下四捨五入*/
+/*@use 'sass:math';*/
+$width: 100%;
+/*少数点も表示される*/
+.boxA {
+    width: math.div($width, 6);
+}
+/*小数点を四捨五入する*/
+.boxB {
+    width: math.round(math.div($width, 6));
+}
+/*math.ceil()小数点以下切り上げ*/
+.boxB {
+  width: math.ceil(math.div($width, 3));
+}
+/*math.floor()小数点以下切り上げ*/
+.boxB {
+  width: math.floor(math.div($width, 6));
 }
