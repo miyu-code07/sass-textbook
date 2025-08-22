@@ -584,3 +584,22 @@ $height: 80px;
     width: $width; // ローカル$widthを参照
     height: $height; // グローバル$heightを参照
 }
+/*globalフラグ*/
+$width: 320px;
+$height: 80px;
+
+.boxA {
+    $width: 33.3% !global;
+    width: $width; // 上書きされたグローバル$widthを参照
+    height: $height; // グローバル$heightを参照
+}
+.boxB {
+    $width: 100vw;
+    $height: 50vw;
+    width: $width; // ローカル$widthを参照
+    height: $height; // ローカル$heightを参照
+}
+.boxC {
+    width: $width; // 上書きされたグローバル$widthを参照
+    height: $height; // グローバル$heightを参照
+}
