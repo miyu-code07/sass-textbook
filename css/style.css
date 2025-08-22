@@ -556,7 +556,30 @@ body {
 /*meta.type-of()関数。データタイプの判別*/
 /*@use 'sass:meta';*/
 .DataTypes {
+  /*Number型*/
   property: number;
+  /*Color型*/
+  property: color;
+  /*String型*/
+  property: string;
+  /*Boolean型*/
+  property: bool;
+  /*Null型*/
+  property: null;
+  /*List型*/
+  property: list;
+  /*Map型*/
+  property: map;
+  /*Function型*/
+  property: function;
 }
+
+/*@ifとの組み合わせ。指定したデータタイプ以外は実行しない*/
+/*@use 'sass:meta';*/
+/*@function example($value) {
+    @if meta.type-of($value) == number {
+        // 処理
+    }
+}*/
 
 /*# sourceMappingURL=style.css.map */

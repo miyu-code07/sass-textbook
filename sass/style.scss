@@ -608,5 +608,36 @@ $height: 80px;
 /*meta.type-of()関数。データタイプの判別*/
 /*@use 'sass:meta';*/
 .DataTypes {
-    property: meta.type-of(10px);
+    /*Number型*/
+    property: meta.type-of(10%);
+      
+    /*Color型*/
+    property: meta.type-of(red);
+      
+    /*String型*/
+    property: meta.type-of(sans-serif);
+      
+    /*Boolean型*/
+    property: meta.type-of(true);
+      
+    /*Null型*/
+    property: meta.type-of(null);
+      
+    /*List型*/
+    property: meta.type-of(1.5em 1em 0 2em);
+      
+    /*Map型*/
+    $map:(key1: value1, key2: value2);
+    property: meta.type-of($map);
+      
+    /*Function型*/
+    property: meta.type-of(get-function("lighten"));
 }
+
+/*@ifとの組み合わせ。指定したデータタイプ以外は実行しない*/
+/*@use 'sass:meta';*/
+/*@function example($value) {
+    @if meta.type-of($value) == number {
+        // 処理
+    }
+}*/
