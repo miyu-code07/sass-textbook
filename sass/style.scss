@@ -6,6 +6,7 @@
 @use 'sass:math'; // モジュール
 @use 'sass:list'; // モジュール
 @use 'sass:map'; // モジュール
+@use 'sass:meta'; // モジュール
 
 li {
     @include g.list-reset;
@@ -602,4 +603,10 @@ $height: 80px;
 .boxC {
     width: $width; // 上書きされたグローバル$widthを参照
     height: $height; // グローバル$heightを参照
+}
+
+/*meta.type-of()関数。データタイプの判別*/
+/*@use 'sass:meta';*/
+.DataTypes {
+    property: meta.type-of(10px);
 }

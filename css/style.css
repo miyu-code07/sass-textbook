@@ -542,13 +542,21 @@ body {
   width: 33.3%;
   height: 80px;
 }
+
 .boxB {
   width: 100vw;
   height: 50vw;
 }
+
 .boxC {
   width: 33.3%;
   height: 80px;
+}
+
+/*meta.type-of()関数。データタイプの判別*/
+/*@use 'sass:meta';*/
+.DataTypes {
+  property: number;
 }
 
 /*# sourceMappingURL=style.css.map */
