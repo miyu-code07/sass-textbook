@@ -1,6 +1,13 @@
-@use "foundation";
+@use "foundation"; /*インポート*/
 @use "global" as g;
-@use "sass:string"; // モジュール
+@use "reset";
+@use "module";
+@use "main";
+/*@use "setting" as *; mainに記述*/
+/*@use "mixin" as *; mainに記述*/
+
+/*モジュール*/
+@use 'sass:string'; // モジュール
 @use 'sass:color'; // モジュール
 @use 'sass:color' as c; // モジュール エイリアス
 @use 'sass:math'; // モジュール
