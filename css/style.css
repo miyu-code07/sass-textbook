@@ -15,8 +15,21 @@ body {
   font-size: 16px;
 }
 
+/*インポート*/
 /*variables*/
 /*list*/
+/*セッティング*/
+/*ミックスイン*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*モジュール*/
+/*インポート*/
+/*@use "setting" as *; mainに記述*/
+/*@use "mixin" as *; mainに記述*/
+/*モジュール*/
 li {
   margin: 0;
   padding: 0;
@@ -581,5 +594,6 @@ body {
         // 処理
     }
 }*/
+/*chap締め*/
 
 /*# sourceMappingURL=style.css.map */
